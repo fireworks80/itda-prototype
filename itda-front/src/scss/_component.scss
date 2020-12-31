@@ -1,0 +1,209 @@
+@use 'variable' as *;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+// ============================
+// card
+// ============================
+.c-card {
+  padding: 10px 15px 20px 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-box-shadow: $shadow-box;
+  box-shadow: $shadow-box;
+
+  &__tit {
+    margin-bottom: 60px;
+    font-weight: bold;
+  }
+}
+
+// ============================
+// list
+// ============================
+.c-sort-bar {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $color-border;
+}
+
+.c-list {
+  &__item {
+    // height: 140px;
+    padding: 15px;
+
+    &:nth-child(n + 2) {
+      border-top: 1px solid $color-border;
+    }
+
+    &:hover {
+      background-color: #f4f4f4;
+    }
+  }
+
+  &__date {
+    margin-bottom: 15px;
+    font-size: pxToem(13px);
+    opacity: 0.5;
+  }
+
+  &__tit {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: pxToem(20px);
+
+    .ico-flag {
+      margin-left: 20px;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  &__interest {
+    display: flex;
+    align-items: center;
+  }
+
+  &__likes > span:nth-of-type(1) {
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+}
+
+// ============================
+// ico
+// ============================
+.ico-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: pxToem(5px) pxToem(15px);
+  border: 1px solid #000;
+  border-radius: $border-round;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+// ============================
+// bread crumb
+// ============================
+.ant-breadcrumb {
+  margin-bottom: 30px;
+}
+
+// ============================
+// btn/a
+// ============================
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: pxToem(10px) pxToem(20px);
+  background-color: $color-point;
+  color: #fff;
+  border: 1px solid $color-point;
+  border-radius: $border-round;
+  font-size: pxToem(18px);
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid $color-point;
+    outline: 0;
+  }
+
+  &--text {
+    background-color: transparent;
+    color: #000;
+    border: 0;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      border: 0;
+      background-color: rgba(0, 0, 0, 0.018);
+    }
+  }
+
+  &-left-ico {
+    margin-right: pxToem(5px);
+    transform: rotate(90deg);
+  }
+}
+
+// ==============================
+// 코멘트 , 좋아요, 스크랩, 공유
+// ==============================
+.recommend {
+  &-con {
+    display: inline-flex;
+    align-items: center;
+
+    &:nth-child(n + 2) {
+      margin-left: 20px;
+    }
+
+    .anticon {
+      margin-right: 10px;
+
+      & + span {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &-con--likes {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .ant-btn {
+    padding: 0;
+    border: 0;
+    line-height: 1.5;
+  }
+}
+
+// ==============================
+// 댓글
+// ==============================
+.comments {
+  // @include debug;
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .ant-comment {
+    flex: 1;
+  }
+
+  .ant-comment-actions {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__form {
+    // @include debug(blue);
+
+    .a11y {
+      display: block;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-color: $color-border;
+  }
+}

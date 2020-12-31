@@ -1,0 +1,48 @@
+@use 'variable' as *;
+@use 'functions' as *;
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+
+  &__map,
+  &__table {
+    flex: 1;
+  }
+
+  &__table {
+    max-width: 380px;
+    margin-left: pxToem(10px);
+    text-align: center;
+    font-size: pxToem(14px);
+
+    th,
+    td {
+      padding: pxToem(20px) 0;
+    }
+
+    th {
+      font-size: pxToem(12px);
+      font-weight: 300;
+      color: #7e84a3;
+    }
+
+    td {
+      border-top: 1px solid $color-border;
+
+      &:nth-child(1) {
+        text-align: left;
+        padding-left: pxToem(15px);
+      }
+
+      &:nth-child(2) {
+        font-weight: 300;
+      }
+
+      .ant-avatar {
+        margin-right: pxToem(5px);
+      }
+    }
+  }
+}

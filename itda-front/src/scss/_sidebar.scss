@@ -1,0 +1,102 @@
+@use 'variable' as *;
+@use 'functions' as *;
+
+.user-summary {
+  position: relative;
+
+  &__header {
+    margin-bottom: 60px;
+  }
+
+  .ant-avatar {
+    float: left;
+    margin-right: 15px;
+  }
+
+  .c-card__tit {
+    margin-bottom: 5px;
+  }
+
+  &__tit-sub {
+    font-weight: bold;
+
+    &:nth-of-type(1) {
+      margin-bottom: 25px;
+    }
+
+    &:nth-of-type(n + 2) {
+      margin-top: 25px;
+    }
+  }
+
+  &__list {
+    opacity: 0.7;
+  }
+
+  &__alam {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+}
+
+// ============================
+// flags
+// ============================
+.flags {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &__label {
+    position: relative;
+
+    span {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 14px 10px 0;
+      width: 30%;
+      height: 32px;
+      border: 1px solid #000;
+      border-radius: $border-round;
+      cursor: pointer;
+    }
+
+    &:nth-of-type(3n) span {
+      margin-right: 0;
+    }
+
+    [type='checkbox']:checked + span {
+      border-color: $color-hover;
+      color: $color-hover;
+    }
+  }
+}
+
+// ============================
+// calendar
+// ============================
+.react-calendar.c-card {
+  width: 100%;
+  border: 0;
+  margin-bottom: 15px;
+
+  .react-calendar__tile--now,
+  .react-calendar__tile--now:hover,
+  .react-calendar__tile--now:enabled:focus {
+    background-color: $color-border;
+  }
+
+  .react-calendar__tile--now.react-calendar__tile--active {
+    color: #000;
+  }
+}
+
+// ============================
+// communities
+// ============================
+.communities__tag {
+  margin-bottom: 10px;
+}

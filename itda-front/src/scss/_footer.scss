@@ -1,0 +1,31 @@
+@use 'functions' as *;
+
+.footer {
+  padding: pxToem(20px) 0;
+  background-color: #f4f4f4;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__company {
+    display: flex;
+    flex-direction: column;
+    margin-right: pxToem(150px);
+    font-size: pxToem(12px);
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+    color: #aca3a3;
+    font-size: 28px;
+  }
+
+  &__info {
+    margin-right: pxToem(100px);
+  }
+
+  &__addr {
+    margin-right: pxToem(100px);
+  }
+}

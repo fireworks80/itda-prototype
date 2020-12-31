@@ -1,0 +1,64 @@
+@use 'variable' as *;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.auth {
+  display: flex;
+  height: 100%;
+
+  &__con {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__link-home {
+    font-size: pxToem(42px);
+  }
+
+  &__form {
+    width: 70%;
+  }
+
+  &__form-tit {
+    text-align: center;
+    font-weight: bold;
+
+    &::before {
+      content: url(#{$loc}/ico-login-plane@2x.png);
+      display: block;
+      margin: 0 auto 50px;
+      width: 44px;
+      height: 38px;
+    }
+  }
+
+  &__remember {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__recovery-pw:hover {
+    color: $color-hover;
+    text-decoration: underline;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn--text {
+    margin-bottom: 15px;
+  }
+
+  &__bg {
+    flex: 1;
+    background: url(../images/img-login@2x.png) no-repeat center top / cover;
+  }
+}

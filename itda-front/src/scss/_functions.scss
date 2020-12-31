@@ -1,0 +1,3 @@
+@function pxToem($size, $default: 16px) {
+  @return $size / $default * 1em;
+}

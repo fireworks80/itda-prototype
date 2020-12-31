@@ -1,0 +1,146 @@
+@use 'variable' as *;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+// ==============================
+// 글 쓰기
+// ==============================
+.question-tit {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  font-size: pxToem(21px);
+
+  &--ico::before {
+    content: url(#{$loc}/ico-earth@2x.png);
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+  }
+
+  .anticon-form {
+    margin-left: 10px;
+  }
+}
+
+.question-form {
+  &__row:nth-child(n + 2) {
+    margin-top: 25px;
+  }
+
+  &__row--last {
+    margin-bottom: 40px;
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: pxToem(18px);
+
+    &--required::after {
+      content: '*';
+      position: absolute;
+      top: 0;
+      right: -10px;
+      color: #ff4d4f;
+    }
+  }
+
+  &__select {
+    width: 100%;
+  }
+
+  &__desc {
+    margin-bottom: 10px;
+    font-size: pxToem(14px);
+    opacity: 0.8;
+  } // desc
+}
+
+// ==============================
+// 글 조회 (page)
+// ==============================
+
+// 수정 삭제 버튼 (more) COMPONENT
+// ==============================
+.btn-more {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.question-read {
+  &__tit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    vertical-align: top;
+
+    .ico-flag {
+      margin-left: 30px;
+    }
+  }
+}
+
+// ==============================
+// 글 조회 / 작성자 (글 조회 컴포넌트)
+// ==============================
+.question-writer {
+  position: relative;
+  padding: pxToem(20px) pxToem(10px);
+  margin-bottom: 30px;
+  border: {
+    width: 1px 0;
+    color: $color-border;
+    style: solid;
+  }
+
+  &__row {
+    // @include debug;
+    display: flex;
+    line-height: 24px;
+
+    &:nth-child(n + 2) {
+      margin-top: 20px;
+    }
+  }
+
+  &__tit {
+    // @include debug;
+    width: 130px;
+    opacity: 0.5;
+  }
+
+  &__desc {
+    &--date {
+      opacity: 0.5;
+    }
+  }
+
+  .btn-more {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+  }
+}
+
+// ==============================
+// 에디터
+// ==============================
+.question-read .tox-tinymce--disabled {
+  margin-bottom: 15px;
+  border-width: 0 0 1px 0;
+  min-height: 600px;
+}
+
+// ==============================
+// 좋아요
+// ==============================
+.question-read__recommend {
+  // @include debug;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}

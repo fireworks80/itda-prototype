@@ -1,0 +1,31 @@
+@use './variable' as *;
+@use './functions' as *;
+
+.greeting {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  .hero__table {
+    max-width: none;
+  }
+
+  &__desc {
+    margin-bottom: 45px;
+    font-size: pxToem(18px);
+    font-weight: bold;
+  }
+
+  &__btns {
+    text-align: center;
+  }
+
+  .btn--link-ico {
+    transform: rotate(90deg);
+  }
+}

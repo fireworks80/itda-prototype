@@ -1,0 +1,113 @@
+@use 'functions' as *;
+@use 'mixins' as *;
+
+.post-list {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .question-tit {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subscribe {
+    position: relative;
+  }
+
+  &__counts {
+    margin-bottom: 100px;
+  }
+
+  &__counts-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:nth-child(n + 2) {
+      margin-left: 30px;
+    }
+  }
+
+  &__counts-num {
+    font-size: pxToem(30px);
+  }
+}
+
+// ============================
+// my account로 들어 왔을때 보임
+// ============================
+.mileage {
+  // @include debug;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  max-width: 900px;
+
+  &__chart,
+  &__list {
+    // @include debug;
+    width: 50%;
+  }
+
+  &__chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  &__chart img {
+    width: 80%;
+  }
+
+  &__list {
+    $margin-left: 150px;
+
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: pxToem(50px) 0;
+    width: calc(50% - #{$margin-left});
+    margin-left: $margin-left;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  &__item {
+    // @include debug;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &:nth-child(n + 2) {
+      margin-top: 15px;
+    }
+  }
+
+  &__tit {
+    flex: 1;
+    position: relative;
+    font-style: normal;
+    font-weight: bold;
+    font-size: pxToem(20px);
+
+    &::before {
+      // @include debug;
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #455964;
+    }
+
+    & + span {
+      opacity: 0.7;
+    }
+  }
+}

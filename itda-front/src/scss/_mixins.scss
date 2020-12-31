@@ -1,0 +1,21 @@
+@mixin debug($color: red) {
+  outline: 1px dashed $color;
+}
+
+@mixin clear-fix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin a11y {
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+}
+
